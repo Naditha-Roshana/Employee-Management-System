@@ -4,7 +4,10 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import jiat.ems_pro.dto.EmployeeDTO;
+import jiat.ems_pro.dto.MiniEmpDTO;
+import jiat.ems_pro.dto.StatusResponseDTO;
 import jiat.ems_pro.entity.Employee;
+import jiat.ems_pro.entity.EmployeeStatus;
 import jiat.ems_pro.util.HibernateUtil;
 import jiat.ems_pro.util.LocalDateTimeAdapter;
 import org.hibernate.HibernateException;
@@ -95,7 +98,7 @@ public class EmployeeService {
         return GSON.toJson(responseObject);
     }
 
-    public EmployeeDTO getEmployeeById(int id) {
+    public EmployeeDTO getEmployeeById(Integer id) {
         Session hibernateSession = HibernateUtil.getSessionFactory().openSession();
         try {
             Employee employee = hibernateSession.get(Employee.class, id);
@@ -121,5 +124,107 @@ public class EmployeeService {
         } finally {
             hibernateSession.close();
         }
+    }
+
+    public String loadEmployeesForSelection() {
+        JsonObject responseObject = new JsonObject();
+        Session hibernateSession = HibernateUtil.getSessionFactory().openSession();
+        List<Employee> employeeList = hibernateSession.createQuery("FROM Employee e", Employee.class).getResultList();
+        responseObject.add("data", GSON.toJsonTree(employeeList.stream()
+                .map(e -> new MiniEmpDTO(e.getFirstName(), e.getId(), e.getLastName()))
+                .toList()));
+        hibernateSession.close();
+        return GSON.toJson(responseObject);
+    }
+
+    public String deleteEmployeeById(Integer id) {
+        JsonObject responseObject = new JsonObject();
+        responseObject.addProperty("status", false);
+
+        Session hibernateSession = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = hibernateSession.beginTransaction();
+
+        try {
+            Employee employee = hibernateSession.get(Employee.class, id);
+            if (employee == null) {
+                responseObject.addProperty("message", "Employee Not Found");
+            } else {
+                hibernateSession.remove(employee);
+                transaction.commit();
+                responseObject.addProperty("status", true);
+                responseObject.addProperty("message", "Employee Deleted Successfully");
+            }
+        } catch (HibernateException e) {
+            transaction.rollback();
+            responseObject.addProperty("message", "Failed to Delete Employee \n Try Again");
+        } finally {
+            hibernateSession.close();
+        }
+
+        return GSON.toJson(responseObject);
+    }
+
+    public String updateEmployeeById(EmployeeDTO employeeDTO) {
+        JsonObject responseObject = new JsonObject();
+        responseObject.addProperty("status", false);
+
+        Session hibernateSession = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = hibernateSession.beginTransaction();
+
+        try{
+            Employee emp = hibernateSession.get(Employee.class, employeeDTO.getId());
+            System.out.println("Update Employee ID: " + employeeDTO.getId());
+            if (emp == null) {
+                responseObject.addProperty("message", "Employee Not Found");
+                return GSON.toJson(responseObject);
+            }
+
+            emp.setFirstName(employeeDTO.getFirstName());
+            emp.setLastName(employeeDTO.getLastName());
+            emp.setNic(employeeDTO.getNic());
+            emp.setEmail(employeeDTO.getEmail());
+            emp.setPhone(employeeDTO.getPhone());
+            emp.setPosition(employeeDTO.getPosition());
+            emp.setDepartment(employeeDTO.getDepartment());
+            emp.setHireDate(employeeDTO.getHireDate());
+            emp.setSalary(employeeDTO.getSalary());
+            emp.setStatus(employeeDTO.getStatus());
+
+            hibernateSession.merge(emp);
+            transaction.commit();
+
+            responseObject.addProperty("status", true);
+            responseObject.addProperty("message", "Employee Updated Successfully");
+
+        } catch (HibernateException e) {
+            transaction.rollback();
+            responseObject.addProperty("message", "Updated Employee Failed. Try Again");
+        } finally {
+            hibernateSession.close();
+        }
+
+        return GSON.toJson(responseObject);
+    }
+
+    public String updateEmployeeStatus(int id, String status) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            Employee emp = session.get(Employee.class, id);
+            if (emp == null) {
+                return GSON.toJson(new StatusResponseDTO("Employee not found", false));
+            }
+            EmployeeStatus newStatus = EmployeeStatus.valueOf(status.toUpperCase());
+            emp.setStatus(newStatus);
+            session.merge(emp);
+            transaction.commit();
+            return GSON.toJson(new StatusResponseDTO("Employee status Updated Successfully", true));
+        } catch (Exception e) {
+            transaction.rollback();
+            return  GSON.toJson(new StatusResponseDTO("Faild to update Employee status", false));
+        } finally {
+          session.close();
+        }
+
     }
 }

@@ -1,0 +1,96 @@
+<!-- Main Content -->
+<div class="flex-1 flex flex-col min-w-0 bg-background-light dark:bg-background-dark">
+    <!-- Page Content -->
+    <main class="flex-1 overflow-y-auto p-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold tracking-tight">Edit Profile</h1>
+                <p class="text-slate-500 dark:text-slate-400 mt-2">Update your personal information and account
+                    security settings.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Profile Picture Section -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white dark:bg-slate-900/50 p-6 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col items-center">
+                        <div class="relative group">
+                            <div id="userAvatar"
+                                 class="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center
+                                        font-bold text-blue-500 border-4 border-white dark:border-background-dark shadow-xl text-2xl">
+                            </div>
+                            <span class="absolute bottom-1 right-1 w-5 h-5 bg-emerald-500 border-2 border-white dark:border-background-dark rounded-full"></span>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <h3 id="ep-role" class="font-bold text-lg">HR Administrator</h3>
+                            <p id="ep-dept" class="text-sm text-slate-500 dark:text-slate-400">Corporate Role</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Form Section -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white dark:bg-slate-900/50 p-8 rounded-xl border border-slate-200 dark:border-slate-800">
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Full
+                                        Name</label>
+                                    <input id="ep-fullName"
+                                           class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent"
+                                           type="text" value="Alexander Hamilton"/>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Username</label>
+                                    <input id="ep-username"
+                                           class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent"
+                                           type="text" value="ahamilton_admin"/>
+                                </div>
+                            </div>
+                            <div class="pt-6 border-t border-slate-100 dark:border-slate-800">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div>
+                                        <h4 class="font-bold">Current - Password</h4>
+                                    </div>
+                                    <button id="btn-change-password"
+                                            class="px-4 py-2 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-all duration-200 shadow-md"
+                                            type="button">
+                                        <span class="material-symbols-outlined text-base">lock_reset</span>
+                                        Change Password
+                                    </button>
+                                </div>
+                                <div class="space-y-2 opacity-50">
+                                    <input id="current-password"
+                                           class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3"
+                                           type="password"
+                                           placeholder="Enter current password"/>
+                                </div>
+
+                                <div id="new-password-container"></div>
+
+                            </div>
+
+                            <div class="flex items-center justify-end gap-4 pt-6">
+                                <button class="px-6 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 font-bold text-sm hover:bg-slate-50 dark:hover:bg-slate-800"
+                                        type="button" onclick="loadPage('admin-dashboard-home.html')">
+                                    Cancel
+                                </button>
+                                <button id="update-profile"
+                                        class="px-6 py-2.5 rounded-lg bg-primary text-white font-bold text-sm hover:bg-primary/90 shadow-lg shadow-primary/20"
+                                        type="button">
+                                    Update Profile
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Security Notice Card -->
+                    <div class="mt-6 p-4 bg-primary/5 border border-primary/10 rounded-xl flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary">info</span>
+                        <div class="text-sm text-slate-600 dark:text-slate-400">
+                            <p class="font-semibold text-primary dark:text-slate-200">Security Note</p>
+                            <p>Changing your username or password may require you to re-verify your identity during
+                                your next login.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

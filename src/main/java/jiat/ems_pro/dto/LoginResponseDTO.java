@@ -9,13 +9,31 @@ public class LoginResponseDTO implements Serializable {
 
     private int userId;
     private String userName;
+    private String password;
     private int empId;
     private String firstName;
     private  String lastName;
+    private String deptName;
     private int roleId;
     private String roleName;
 
     public LoginResponseDTO() {}
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getDeptName() {
+        return deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
 
     public int getEmpId() {
         return empId;

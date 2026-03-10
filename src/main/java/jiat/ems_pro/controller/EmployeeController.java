@@ -2,6 +2,8 @@ package jiat.ems_pro.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -36,7 +38,7 @@ public class EmployeeController {
 
     @GET
     @Path("/{id}")
-    public Response getEmployeeById(@PathParam("id") int id) {
+    public Response getEmployeeById(@PathParam("id") Integer id) {
         EmployeeDTO empDTO = new EmployeeService().getEmployeeById(id);
         if (empDTO == null) {
             return Response.status(Response.Status.NOT_FOUND)
@@ -45,4 +47,39 @@ public class EmployeeController {
         return Response.ok().entity(empDTO).build();
     }
 
+    @Path("/empNI")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response loadEmpNI() {
+        String responseJson = new EmployeeService().loadEmployeesForSelection();
+        return Response.ok().entity(responseJson).build();
+    }
+
+    @DELETE
+    @Path("/{id}")
+    public Response deleteEmployee(@PathParam("id") int id) {
+        String responseJson = new EmployeeService().deleteEmployeeById(id);
+        return Response.ok().entity(responseJson).build();
+    }
+
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateEmployee(String json) {
+        EmployeeDTO employeeDTO = GSON.fromJson(json, EmployeeDTO.class);
+        String responseJson = new EmployeeService().updateEmployeeById(employeeDTO);
+        return Response.ok().entity(responseJson).build();
+    }
+
+    @PUT
+    @Path("/status")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateEmployeeStatus(String json) {
+        JsonObject obj = JsonParser.parseString(json).getAsJsonObject();
+        int id = obj.get("id").getAsInt();
+        String status = obj.get("status").getAsString();
+        String responseJson = new EmployeeService().updateEmployeeStatus(id, status);
+        return Response.ok().entity(responseJson).build();
+    }
 }

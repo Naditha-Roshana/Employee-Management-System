@@ -1,0 +1,172 @@
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0">
+    <!-- Form Content -->
+    <div class="flex-1 p-8 overflow-y-auto">
+        <div>
+            <div class="mb-8">
+                <nav class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-2">
+                    <a href="#" class="hover:text-slate-700 dark:hover:text-slate-300"
+                       onclick="loadPage('admin-dashboard-employee.html')">
+                        <span>Employees</span>
+                    </a>
+                    <span class="material-symbols-outlined text-xs">chevron_right</span>
+                    <span class="text-primary font-medium">Edit Employee Details</span>
+                </nav>
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-5">Edit Employee Details</h3>
+                <p class="text-slate-500 dark:text-slate-400">--add---</p>
+            </div>
+
+            <!-- Profile Summary Card -->
+            <div class="bg-white dark:bg-primary/5 rounded-xl border border-slate-200 dark:border-primary/20 p-6">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div class="flex items-center gap-6">
+                        <div class="relative">
+                            <div id="userAvatar"
+                                 class="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center
+                                        font-bold text-blue-500 border-4 border-white dark:border-background-dark shadow-xl text-2xl">
+                            </div>
+                            <span id="empStatusDot" class="absolute bottom-1 right-1 w-5 h-5 bg-emerald-500 border-2 border-white dark:border-background-dark rounded-full"></span>
+                        </div>
+                        <div>
+                            <h2 id="empName" class="text-2xl font-bold text-slate-900 dark:text-slate-100">Johnathan Doe</h2>
+                            <p id="empRole" class="text-slate-500 dark:text-slate-400">Senior Software Engineer • Engineering
+                                Dept.</p>
+                            <div class="mt-2 flex gap-2">
+                                <span id="empStatus" class="px-2 py-0.5 text-xs font-bold rounded"></span>
+                                <span id="empCode" class="px-2 py-0.5 bg-primary/10 text-primary dark:text-slate-300 text-xs font-bold rounded"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="h-8 w-px bg-slate-200 dark:bg-primary/20 mx-1"></div>
+                        <button id="empStatusBadge"
+                             class="group flex items-center gap-2 px-4 py-2 border border-red-200 dark:border-red-900/50 text-red-600 dark:text-red-400 rounded-lg text-sm font-semibold hover:bg-red-50 dark:hover:bg-red-900/10 transition-all">
+                            <span id="empS-icon" class="material-symbols-outlined text-sm">done</span>
+                            <span id="empStatusBtn">A/I</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <form class="bg-white dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 p-8 space-y-8 mt-10">
+                <!-- Personal Information Section -->
+                <section>
+                    <div class="flex items-center gap-2 mb-6 pb-2 border-b border-slate-200 dark:border-slate-800">
+                        <span class="material-symbols-outlined text-primary">person</span>
+                        <h4 class="text-lg font-semibold text-slate-900 dark:text-white">Personal Information</h4>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">First Name</label>
+                            <input id="first-Name"
+                                   class="w-full bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 rounded-lg py-2.5 px-4 focus:ring-primary focus:border-primary dark:text-white"
+                                   placeholder="e.g. John" type="text"/>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Last Name</label>
+                            <input id="lastName"
+                                   class="w-full bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 rounded-lg py-2.5 px-4 focus:ring-primary focus:border-primary dark:text-white"
+                                   placeholder="e.g. Doe" type="text"/>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">NIC / ID
+                                Number</label>
+                            <input id="nicNumber"
+                                   class="w-full bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 rounded-lg py-2.5 px-4 focus:ring-primary focus:border-primary dark:text-white"
+                                   placeholder="Identification number" type="text"/>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Hire Date</label>
+                            <input id="hireDate"
+                                   class="w-full bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 rounded-lg py-2.5 px-4 focus:ring-primary focus:border-primary dark:text-white"
+                                   type="date"/>
+                        </div>
+                    </div>
+                </section>
+                <!-- Contact Details Section -->
+                <section>
+                    <div class="flex items-center gap-2 mb-6 pb-2 border-b border-slate-200 dark:border-slate-800">
+                        <span class="material-symbols-outlined text-primary">contact_mail</span>
+                        <h4 class="text-lg font-semibold text-slate-900 dark:text-white">Contact &amp; Employment</h4>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Email Address</label>
+                            <input id="email"
+                                   class="w-full bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 rounded-lg py-2.5 px-4 focus:ring-primary focus:border-primary dark:text-white"
+                                   placeholder="sample@gmail.com" type="email"/>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Phone Number</label>
+                            <input id="phone-Number"
+                                   class="w-full bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 rounded-lg py-2.5 px-4 focus:ring-primary focus:border-primary dark:text-white"
+                                   placeholder="07x-xxx-xxxx" type="tel"/>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Department</label>
+                            <select id="department"
+                                    class="w-full bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 rounded-lg py-2.5 px-4 focus:ring-primary focus:border-primary dark:text-white">
+                                <option value="">Select Department</option>
+                                <option>Developing</option>
+                                <option>Marketing</option>
+                                <option>Sales</option>
+                                <option>Human Resources</option>
+                            </select>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Position</label>
+                            <input id="position"
+                                   class="w-full bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 rounded-lg py-2.5 px-4 focus:ring-primary focus:border-primary dark:text-white"
+                                   placeholder="Job title" type="text"/>
+                        </div>
+                    </div>
+                </section>
+                <!-- Financials & Status Section -->
+                <section>
+                    <div class="flex items-center gap-2 mb-6 pb-2 border-b border-slate-200 dark:border-slate-800">
+                        <span class="material-symbols-outlined text-primary">payments</span>
+                        <h4 class="text-lg font-semibold text-slate-900 dark:text-white">Financials &amp; Status</h4>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Monthly Salary
+                                (Rs)</label>
+                            <input id="salary"
+                                   class="w-full bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 rounded-lg py-2.5 px-4 focus:ring-primary focus:border-primary dark:text-white"
+                                   placeholder="50000" type="number"/>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Employment
+                                Status</label>
+                            <div class="flex items-center gap-4 mt-2">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input checked=""
+                                           class="w-4 h-4 text-primary bg-slate-50 border-slate-200 focus:ring-primary"
+                                           name="status" type="radio" value="ACTIVE"/>
+                                    <span class="text-sm text-slate-700 dark:text-slate-300">Active</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input class="w-4 h-4 text-primary bg-slate-50 border-slate-200 focus:ring-primary"
+                                           name="status" type="radio" value="INACTIVE"/>
+                                    <span class="text-sm text-slate-700 dark:text-slate-300">Inactive</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Form Footer Actions -->
+                <div class="flex items-center justify-end gap-4 pt-4">
+                    <button class="px-6 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                            type="button"
+                            onclick="loadPage('admin-dashboard-employee.html')">
+                        Cancel
+                    </button>
+                    <button class="px-8 py-2.5 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all"
+                            type="submit">
+                        Update
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

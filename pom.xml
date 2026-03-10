@@ -11,6 +11,7 @@
     <name>ems_pro</name>
 
     <dependencies>
+        <!--    TOMCAT START    -->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
@@ -21,6 +22,7 @@
             <artifactId>tomcat-embed-jasper</artifactId>
             <version>10.1.7</version>
         </dependency>
+        <!--    TOMCAT END    -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -47,7 +49,7 @@
             <artifactId>mysql-connector-j</artifactId>
             <version>9.0.0</version>
         </dependency>
-
+        <!--    JERSEY START    -->
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet</artifactId>
@@ -69,7 +71,7 @@
             <artifactId>jersey-media-json-jackson</artifactId>
             <version>3.1.5</version>
         </dependency>
-
+        <!--    JERSEY END    -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>

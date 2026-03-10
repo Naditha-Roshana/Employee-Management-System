@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 public class EmployeeDTO implements Serializable {
-    private int Id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private String nic;
@@ -23,11 +23,19 @@ public class EmployeeDTO implements Serializable {
     public EmployeeDTO() {
     }
 
-    public EmployeeDTO(LocalDateTime createdAt, String department, String email, int Id, String firstName, String hireDate, String lastName, String nic, String phone, String position, Double salary, EmployeeStatus status, LocalDateTime updatedAt) {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public EmployeeDTO(LocalDateTime createdAt, String department, String email, Integer Id, String firstName, String hireDate, String lastName, String nic, String phone, String position, Double salary, EmployeeStatus status, LocalDateTime updatedAt) {
         this.createdAt = createdAt;
         this.department = department;
         this.email = email;
-        this.Id = Id;
+        this.id = Id;
         this.firstName = firstName;
         this.hireDate = hireDate;
         this.lastName = lastName;
@@ -61,14 +69,6 @@ public class EmployeeDTO implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int Id) {
-        this.Id = Id;
     }
 
     public String getFirstName() {
