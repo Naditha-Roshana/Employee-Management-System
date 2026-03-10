@@ -1,0 +1,240 @@
+<!-- Content Area -->
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+    <!-- Stats Section -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+                class="bg-white dark:bg-primary/5 p-6 rounded-xl border border-slate-200 dark:border-primary/20 shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+                            <span
+                                    class="p-2 bg-primary/10 text-primary rounded-lg material-symbols-outlined">account_balance</span>
+                <span
+                        class="text-emerald-500 text-xs font-bold bg-emerald-500/10 px-2 py-1 rounded-full">+12%</span>
+            </div>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Departments</p>
+            <h3 class="text-3xl font-bold mt-1">12</h3>
+        </div>
+        <div
+                class="bg-white dark:bg-primary/5 p-6 rounded-xl border border-slate-200 dark:border-primary/20 shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+                            <span
+                                    class="p-2 bg-primary/10 text-primary rounded-lg material-symbols-outlined">groups</span>
+                <span
+                        class="text-emerald-500 text-xs font-bold bg-emerald-500/10 px-2 py-1 rounded-full">+5.4%</span>
+            </div>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Average Team Size</p>
+            <h3 class="text-3xl font-bold mt-1">45</h3>
+        </div>
+        <div
+                class="bg-white dark:bg-primary/5 p-6 rounded-xl border border-slate-200 dark:border-primary/20 shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+                            <span
+                                    class="p-2 bg-primary/10 text-primary rounded-lg material-symbols-outlined">trending_up</span>
+                <span
+                        class="text-slate-400 text-xs font-bold bg-slate-400/10 px-2 py-1 rounded-full">Static</span>
+            </div>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Most Populated</p>
+            <h3 class="text-3xl font-bold mt-1">Engineering</h3>
+        </div>
+    </div>
+    <!-- Table Section -->
+    <div
+            class="bg-white dark:bg-primary/5 rounded-xl border border-slate-200 dark:border-primary/20 shadow-sm overflow-hidden">
+        <div class="p-6 border-b border-slate-200 dark:border-primary/20 flex items-center justify-between">
+            <h2 class="text-lg font-bold">Department Directory</h2>
+            <div class="flex gap-2">
+                <button
+                        class="flex items-center gap-2 text-sm font-medium px-3 py-1.5 border border-slate-200 dark:border-primary/20 rounded-lg hover:bg-slate-50 dark:hover:bg-primary/10">
+                    <span class="material-symbols-outlined text-sm">filter_list</span>
+                    Filter
+                </button>
+                <button
+                        class="flex items-center gap-2 text-sm font-medium px-3 py-1.5 border border-slate-200 dark:border-primary/20 rounded-lg hover:bg-slate-50 dark:hover:bg-primary/10">
+                    <span class="material-symbols-outlined text-sm">download</span>
+                    Export
+                </button>
+            </div>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                <tr class="bg-slate-50 dark:bg-primary/5">
+                    <th
+                            class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                        Dept ID</th>
+                    <th
+                            class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                        Name</th>
+                    <th
+                            class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                        Head of Department</th>
+                    <th
+                            class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider text-center">
+                        Employees</th>
+                    <th
+                            class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                        Status</th>
+                    <th
+                            class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider text-right">
+                        Actions</th>
+                </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-primary/10">
+                <!-- Row 1 -->
+                <tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 text-sm font-semibold font-mono text-primary">D-101</td>
+                    <td class="px-6 py-4 text-sm font-medium">Engineering</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                    class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                                <img alt="Sarah Chen" class="w-full h-full object-cover"
+                                     data-alt="Manager Sarah Chen avatar"
+                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpE15aOgA-mCtq9-EYn0-rsxwNbggWrxds-iysC6Yprm4XYpD8gxf4HIwrm3Rg9jpfxVjWrPudM4EtPejx47fBIDWS9uVuCe-KbR1DoDA3FiM7ZZqlkdSqOvke-1jbJ06SNEf2xJZJ4iUuyKKGMimG8h5IENjissfjoQ99o8ehrQjrl-78ymdgn4SZiz_fystyF5PGdPPlmU7hjtn46e966RlSuPn5G0dRgUgGJsGtri07LwecHHKp7Vf2y54YccOcpjoqksCNRGA" />
+                            </div>
+                            <span class="text-sm font-medium">Sarah Chen</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-center">156</td>
+                    <td class="px-6 py-4">
+                                        <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+                                            <span class="size-1.5 rounded-full bg-emerald-500"></span> Active
+                                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <div class="flex items-center justify-end gap-2">
+                            <button
+                                    class="p-1.5 text-slate-400 hover:text-primary transition-colors"><span
+                                    class="material-symbols-outlined text-lg">visibility</span></button>
+                            <button
+                                    class="p-1.5 text-slate-400 hover:text-primary transition-colors"><span
+                                    class="material-symbols-outlined text-lg">edit</span></button>
+                            <button
+                                    class="p-1.5 text-slate-400 hover:text-red-500 transition-colors"><span
+                                    class="material-symbols-outlined text-lg">delete</span></button>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 text-sm font-semibold font-mono text-primary">D-102</td>
+                    <td class="px-6 py-4 text-sm font-medium">Marketing</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                    class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                                <img alt="James Wilson" class="w-full h-full object-cover"
+                                     data-alt="Manager James Wilson avatar"
+                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZpQuEK_lyhFVjkfaluOkorACndbWz-fhUppGhPRdHPi0spsYFyLXhW6FHu4tuuM7UcWmxNhAmT_ghHWPFXnZh_ehmG9VomPOzNMBK3DCPRYXySzQXtxyfV9BVRKzks99xZ7Q3e-Xasp5vMOSdAYekSP_9AjHXoZsXDVDV6SPnyGlC16MLvh2fpmRIvkxgkjF98lDlDcyeGeVGo0aDBFMt9_mZajes-Uhf8J0vMxhis830qRgUNL1wy4C4yCuE2njRHEHLdefAmdI" />
+                            </div>
+                            <span class="text-sm font-medium">James Wilson</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-center">42</td>
+                    <td class="px-6 py-4">
+                                        <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+                                            <span class="size-1.5 rounded-full bg-emerald-500"></span> Active
+                                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <div class="flex items-center justify-end gap-2">
+                            <button
+                                    class="p-1.5 text-slate-400 hover:text-primary transition-colors"><span
+                                    class="material-symbols-outlined text-lg">visibility</span></button>
+                            <button
+                                    class="p-1.5 text-slate-400 hover:text-primary transition-colors"><span
+                                    class="material-symbols-outlined text-lg">edit</span></button>
+                            <button
+                                    class="p-1.5 text-slate-400 hover:text-red-500 transition-colors"><span
+                                    class="material-symbols-outlined text-lg">delete</span></button>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Row 3 -->
+                <tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 text-sm font-semibold font-mono text-primary">D-103</td>
+                    <td class="px-6 py-4 text-sm font-medium">Human Resources</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                    class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                                <img alt="Elena Rodriguez" class="w-full h-full object-cover"
+                                     data-alt="Manager Elena Rodriguez avatar"
+                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbfigydtsLgjv9V4htcdT0SB-254le-nAaGc-SE_I6-k-wQMXXbwn0-BgS0zJuWLfCyDsvcrEH-IIzpGN4t7OwiDl6q1-nW85N2y1tuSdYzhl8cspQvzL6QkbGHi7GBmGMQlwf0AD8rcUIQ2nWRjkOZZMEH_sp3wQ545m2NK8PB1DFiJEgKGdHoZ0x8OWTTxtLm2pg-YDntAO5dvPLN4G662A4rjrHd2rxFKV3zhhOBD7-0ruuzCG240SGXj_b-dRzZ69WylGwQzg" />
+                            </div>
+                            <span class="text-sm font-medium">Elena Rodriguez</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-center">12</td>
+                    <td class="px-6 py-4">
+                                        <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+                                            <span class="size-1.5 rounded-full bg-emerald-500"></span> Active
+                                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <div class="flex items-center justify-end gap-2">
+                            <button
+                                    class="p-1.5 text-slate-400 hover:text-primary transition-colors"><span
+                                    class="material-symbols-outlined text-lg">visibility</span></button>
+                            <button
+                                    class="p-1.5 text-slate-400 hover:text-primary transition-colors"><span
+                                    class="material-symbols-outlined text-lg">edit</span></button>
+                            <button
+                                    class="p-1.5 text-slate-400 hover:text-red-500 transition-colors"><span
+                                    class="material-symbols-outlined text-lg">delete</span></button>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Row 4 -->
+                <tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+                    <td class="px-6 py-4 text-sm font-semibold font-mono text-primary">D-104</td>
+                    <td class="px-6 py-4 text-sm font-medium">Sales</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                    class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                                <img alt="Robert Fox" class="w-full h-full object-cover"
+                                     data-alt="Manager Robert Fox avatar"
+                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9AsxVReIKoxDDygjx1-d_4J5fLLnu5RqBa_fLv2H7UURIL81AvNpRVYQeb_X1HJrof7Bww3p_EmNgM322T4zRJpByerWP3fS2zeFvrHO7XNcAbuRmFLQWBHqKq4mecuhs6txsRmK2zuqG7wqIL6uCi_zopXNPHoj2AB3EB22SuLnDz5cbaB_6JvW-ZZ_ffZ9iwkD_e29RFvuAsCFCpAQT0kVIQe5IemfrBeg9theB_sIgcB-a_Y8zTgcEStdU4Feg7FKNQLScEpY" />
+                            </div>
+                            <span class="text-sm font-medium">Robert Fox</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-center">89</td>
+                    <td class="px-6 py-4">
+                                        <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-slate-500/10 text-slate-500 border border-slate-500/20">
+                                            <span class="size-1.5 rounded-full bg-slate-500"></span> Inactive
+                                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <div class="flex items-center justify-end gap-2">
+                            <button
+                                    class="p-1.5 text-slate-400 hover:text-primary transition-colors"><span
+                                    class="material-symbols-outlined text-lg">visibility</span></button>
+                            <button
+                                    class="p-1.5 text-slate-400 hover:text-primary transition-colors"><span
+                                    class="material-symbols-outlined text-lg">edit</span></button>
+                            <button
+                                    class="p-1.5 text-slate-400 hover:text-red-500 transition-colors"><span
+                                    class="material-symbols-outlined text-lg">delete</span></button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="p-4 border-t border-slate-200 dark:border-primary/20 flex items-center justify-between">
+            <p class="text-sm text-slate-500">Showing 1 to 4 of 12 entries</p>
+            <div class="flex gap-2">
+                <button
+                        class="px-4 py-2 text-sm border border-slate-200 dark:border-primary/20 rounded-lg hover:bg-slate-50 dark:hover:bg-primary/10 disabled:opacity-50"
+                        disabled="">Previous</button>
+                <button
+                        class="px-4 py-2 text-sm border border-slate-200 dark:border-primary/20 rounded-lg hover:bg-slate-50 dark:hover:bg-primary/10">Next</button>
+            </div>
+        </div>
+    </div>
+</div>
